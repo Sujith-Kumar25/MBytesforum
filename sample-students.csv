@@ -1,0 +1,11 @@
+registerNo,name,Password,year,department
+REG001,John Doe,password123,2023,CSE
+REG002,Jane Smith,password456,2023,ECE
+REG003,Bob Johnson,password789,2023,ME
+REG004,Alice Williams,password101,2023,CSE
+REG005,Charlie Brown,password202,2023,ECE
+REG006,Diana Prince,password303,2023,ME
+REG007,Edward Norton,password404,2023,CSE
+REG008,Fiona Apple,password505,2023,ECE
+
+
