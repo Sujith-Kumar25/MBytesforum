@@ -306,7 +306,7 @@ router.post('/control/start', authenticateAdmin, async (req, res) => {
     io.emit('votingStatus', { status: 'in_progress' });
     io.emit('votingStarted');
 
-    // Start the post timer (20 seconds)
+    // Start the post timer (60 seconds)
     await startPostTimer(control, posts);
 
     res.json({
@@ -484,7 +484,7 @@ async function startPostTimer(control, posts) {
     return;
   }
 
-  let remainingTime = 20; // 20 seconds
+  let remainingTime = 60; // 60 seconds
   const startTime = Date.now();
 
   // Emit initial post
@@ -498,7 +498,7 @@ async function startPostTimer(control, posts) {
   global.postTimer = setInterval(async () => {
     // Recalculate remaining time based on actual elapsed time
     const elapsed = Math.floor((Date.now() - startTime) / 1000);
-    remainingTime = Math.max(0, 20 - elapsed);
+    remainingTime = Math.max(0, 60 - elapsed);
 
     // Reload control to check status
     const updatedControl = await AdminControl.getControl();
